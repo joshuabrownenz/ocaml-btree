@@ -15,20 +15,22 @@ assert_equal (find_key_index 9 node) 4
 
 let find_key_not_in_the_node_smaller_than_all_keys _ =
 let node = create_node  ~compare [|3; 5; 7; 9|] [||] true in
-assert_equal (find_key_index 1 node) 0 
+assert_equal (find_key_index 1 node) (-1)
 
 let find_key_not_in_the_node_between_keys _ =
 let node = create_node  ~compare [|1; 3; 5; 7|] [||] true in
-assert_equal (find_key_index 4 node) 2
+assert_equal (find_key_index 4 node) 1 
 
 let find_key_not_in_the_node_larger_than_all_keys _ =
 let node = create_node  ~compare [|1; 3; 5; 7|] [||] true in
-assert_equal (find_key_index 10 node) 4 
+assert_equal (find_key_index 10 node) 3 
 
 let find_key_in_a_string_node _ =
 let node = create_node  ~compare:String.compare [|"a"; "b"; "c"; "d"; "e"|] [||] true in
 assert_equal (find_key_index "b" node) 1
 
+
+(* BTree created to match the one on the page https://builtin.com/data-science/b-tree-index *)
 let create_btree _ = 
   let leaf_node_1 = create_node ~compare [|1; 4|] [||] true in
   let leaf_node_2 = create_node ~compare [|9|] [||] true in

@@ -11,7 +11,7 @@ type 'a btree_node = {
 (**  *)
 val create_node : compare:('a -> 'a -> int) -> 'a array -> 'a btree_node array -> bool -> 'a btree_node
 
-(**  *)
+(** This returns a value -1 to the length of array - 1 *)
 val find_key_index : 'a -> 'a btree_node -> int  
 
 (**  *)
