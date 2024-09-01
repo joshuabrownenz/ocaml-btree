@@ -1,4 +1,4 @@
 (executable
  (public_name ocaml_btree)
  (name main)
- (libraries btree_node))
+ (libraries btree))

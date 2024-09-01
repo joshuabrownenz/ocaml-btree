@@ -1,5 +1,5 @@
 open OUnit2
-open Btree_node
+open Btree
 
 let find_key_in_the_middle _ =
   let node = create_node ~compare [|1; 3; 5; 7; 9|] [||] true in
@@ -72,7 +72,7 @@ let test_key_exists_on_btree _ =
 
 let () =
   run_test_tt_main
-    ("btree_node_tests" >:::
+    ("btree_tests" >:::
        [
           "find key in the middle" >:: find_key_in_the_middle;
           "find key at the beginning" >:: find_key_at_the_beginning;
