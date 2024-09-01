@@ -1,6 +1,3 @@
 (library
- (name ocaml_btree)
- (inline_tests)
- (preprocess
-  (pps ppx_inline_test))
+ (name btree_node)
  (libraries base stdio))
